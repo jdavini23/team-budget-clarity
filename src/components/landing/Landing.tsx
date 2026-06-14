@@ -133,11 +133,11 @@ function Hero() {
       className="relative overflow-hidden"
       style={{ backgroundImage: "var(--gradient-hero)" }}
     >
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-8 lg:py-28">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8 lg:py-28">
         <div className="animate-fade-in">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
             <Sparkles className="h-3.5 w-3.5 text-accent" />
-            For youth sports teams
+            Mobile-first · Built for the sideline
           </span>
           <h1 className="mt-5 font-display text-[clamp(2.5rem,5.5vw,4.25rem)] font-700 leading-[1.05] tracking-tight text-foreground">
             Finally know where{" "}
@@ -152,13 +152,14 @@ function Hero() {
             goes.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            TeamBudget gives parents, coaches, and treasurers real-time financial
-            transparency — so the only thing your team argues about is the lineup.
+            Track fees, receipts, and spending from your phone — at the diamond,
+            in the parking lot, or on the bus. TeamBudget gives parents, coaches,
+            and treasurers real-time financial transparency, anywhere.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button asChild size="lg" className="rounded-full px-6 text-base">
               <a href="#pricing">
-                Start free — no card required <ArrowRight className="h-4 w-4" />
+                Launch your team dashboard <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
             <Button
@@ -167,7 +168,7 @@ function Hero() {
               variant="outline"
               className="rounded-full px-6 text-base"
             >
-              <a href="#how">See live demo</a>
+              <a href="#how">Start your free pilot</a>
             </Button>
           </div>
           <div className="mt-8 flex items-center gap-3 text-sm text-muted-foreground">
@@ -191,91 +192,125 @@ function Hero() {
 
 function DashboardMockup() {
   return (
-    <div className="relative animate-fade-in">
+    <div className="relative mx-auto flex w-full max-w-[340px] animate-fade-in items-center justify-center">
+      {/* Phone frame */}
       <div
-        className="relative rounded-2xl border border-border bg-card p-5 sm:p-6"
+        className="relative rounded-[2.75rem] border border-border bg-[oklch(0.18_0.04_250)] p-3"
         style={{ boxShadow: "var(--shadow-lift)" }}
       >
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              U12 Lightning · Fall season
-            </p>
-            <p className="mt-1 font-display text-2xl font-700 tracking-tight">
-              $8,420 <span className="text-base font-500 text-muted-foreground">/ $12,000</span>
-            </p>
+        {/* Notch */}
+        <div className="absolute left-1/2 top-3 z-10 h-6 w-28 -translate-x-1/2 rounded-full bg-[oklch(0.18_0.04_250)]" />
+
+        {/* Screen */}
+        <div className="relative h-[600px] w-[280px] overflow-hidden rounded-[2rem] bg-card">
+          {/* Status bar */}
+          <div className="flex items-center justify-between px-5 pt-3 text-[11px] font-semibold text-foreground/80">
+            <span>9:41</span>
+            <span className="flex items-center gap-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-foreground/70" />
+              <span className="h-1.5 w-1.5 rounded-full bg-foreground/70" />
+              <span className="h-1.5 w-1.5 rounded-full bg-foreground/70" />
+            </span>
           </div>
-          <span
-            className="rounded-full px-2.5 py-1 text-xs font-semibold"
-            style={{
-              background: "var(--brand-mint-soft)",
-              color: "oklch(0.32 0.12 170)",
-            }}
-          >
-            On track
-          </span>
-        </div>
 
-        <div className="mt-4 h-2.5 w-full overflow-hidden rounded-full bg-muted">
-          <div
-            className="h-full rounded-full"
-            style={{ width: "70%", background: "var(--gradient-cta)" }}
-          />
-        </div>
-
-        <div className="mt-5 grid grid-cols-3 gap-3 text-center">
-          {[
-            { label: "Collected", val: "$8.4k" },
-            { label: "Spent", val: "$5.1k" },
-            { label: "Remaining", val: "$3.3k" },
-          ].map((s) => (
-            <div key={s.label} className="rounded-xl bg-muted/60 px-2 py-3">
-              <p className="font-display text-lg font-700">{s.val}</p>
-              <p className="text-[11px] text-muted-foreground">{s.label}</p>
-            </div>
-          ))}
-        </div>
-
-        <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          Recent activity
-        </p>
-        <ul className="mt-2 divide-y divide-border">
-          {[
-            { who: "Tournament fees", amt: "-$420", tag: "Travel", neg: true },
-            { who: "Registration · 4 parents", amt: "+$2,000", tag: "Fees" },
-            { who: "Uniforms (Dick's)", amt: "-$612", tag: "Gear", neg: true },
-          ].map((r) => (
-            <li key={r.who} className="flex items-center justify-between py-2.5 text-sm">
-              <div>
-                <p className="font-medium text-foreground">{r.who}</p>
-                <p className="text-xs text-muted-foreground">{r.tag}</p>
-              </div>
+          {/* Header */}
+          <div className="px-5 pt-6">
+            <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+              U12 Lightning · Fall
+            </p>
+            <div className="mt-1 flex items-end justify-between">
+              <p className="font-display text-[1.6rem] font-700 leading-none tracking-tight">
+                $8,420
+                <span className="ml-1 text-sm font-500 text-muted-foreground">
+                  / $12k
+                </span>
+              </p>
               <span
-                className={
-                  "font-display font-700 " +
-                  (r.neg ? "text-foreground" : "text-[oklch(0.55_0.16_160)]")
-                }
+                className="rounded-full px-2 py-0.5 text-[10px] font-semibold"
+                style={{
+                  background: "var(--brand-mint-soft)",
+                  color: "oklch(0.32 0.12 170)",
+                }}
               >
-                {r.amt}
+                On track
               </span>
-            </li>
-          ))}
-        </ul>
+            </div>
+            <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-muted">
+              <div
+                className="h-full rounded-full"
+                style={{ width: "70%", background: "var(--gradient-cta)" }}
+              />
+            </div>
+          </div>
+
+          {/* Stat tiles */}
+          <div className="mt-4 grid grid-cols-3 gap-2 px-5 text-center">
+            {[
+              { label: "In", val: "$8.4k" },
+              { label: "Out", val: "$5.1k" },
+              { label: "Left", val: "$3.3k" },
+            ].map((s) => (
+              <div key={s.label} className="rounded-lg bg-muted/60 px-1 py-2">
+                <p className="font-display text-sm font-700">{s.val}</p>
+                <p className="text-[10px] text-muted-foreground">{s.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Activity list */}
+          <p className="mt-5 px-5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+            Recent activity
+          </p>
+          <ul className="mt-1 divide-y divide-border px-5">
+            {[
+              { who: "Tournament fees", amt: "-$420", tag: "Travel", neg: true },
+              { who: "Reg · 4 parents", amt: "+$2,000", tag: "Fees" },
+              { who: "Uniforms", amt: "-$612", tag: "Gear", neg: true },
+            ].map((r) => (
+              <li
+                key={r.who}
+                className="flex items-center justify-between py-2 text-xs"
+              >
+                <div>
+                  <p className="font-medium text-foreground">{r.who}</p>
+                  <p className="text-[10px] text-muted-foreground">{r.tag}</p>
+                </div>
+                <span
+                  className={
+                    "font-display text-sm font-700 " +
+                    (r.neg ? "text-foreground" : "text-[oklch(0.55_0.16_160)]")
+                  }
+                >
+                  {r.amt}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Bottom tab bar */}
+          <div className="absolute inset-x-3 bottom-3 flex items-center justify-around rounded-2xl bg-muted/70 py-2 backdrop-blur">
+            <span className="h-1.5 w-6 rounded-full bg-foreground" />
+            <span className="h-1.5 w-6 rounded-full bg-foreground/30" />
+            <span className="h-1.5 w-6 rounded-full bg-foreground/30" />
+            <span className="h-1.5 w-6 rounded-full bg-foreground/30" />
+          </div>
+        </div>
       </div>
 
+      {/* Floating notification */}
       <div
-        className="absolute -bottom-5 -left-5 hidden max-w-[260px] rounded-xl border border-border bg-card p-3 sm:flex sm:items-center sm:gap-3"
+        className="absolute -right-4 top-16 hidden w-[230px] items-center gap-3 rounded-xl border border-border bg-card p-3 sm:flex lg:-right-10"
         style={{ boxShadow: "var(--shadow-card)" }}
       >
         <span
-          className="flex h-9 w-9 items-center justify-center rounded-full"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full"
           style={{ background: "var(--brand-mint-soft)" }}
         >
           <Bell className="h-4 w-4" style={{ color: "oklch(0.32 0.12 170)" }} />
         </span>
         <div>
-          <p className="text-sm font-semibold">Fee collected · $250</p>
-          <p className="text-xs text-muted-foreground">From Jamie's mom · 2s ago</p>
+          <p className="text-sm font-semibold leading-tight">Fee collected · $250</p>
+          <p className="text-xs text-muted-foreground">Jamie's mom · just now</p>
         </div>
       </div>
     </div>
