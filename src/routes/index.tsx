@@ -1,29 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Landing } from "@/components/landing/Landing";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "TeamBudget — Real-time budgets for youth sports teams" },
+      {
+        name: "description",
+        content:
+          "TeamBudget gives parents, coaches, and treasurers live financial transparency for every youth sports team. Track fees, receipts, and spending in one place.",
+      },
+      { property: "og:title", content: "TeamBudget — Real-time budgets for youth sports teams" },
+      {
+        property: "og:description",
+        content:
+          "Stop chasing receipts and answering 'where did my $500 go?' TeamBudget brings live budget transparency to youth sports teams.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Index,
+  component: Landing,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
