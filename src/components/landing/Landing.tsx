@@ -133,11 +133,11 @@ function Hero() {
       className="relative overflow-hidden"
       style={{ backgroundImage: "var(--gradient-hero)" }}
     >
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-8 lg:py-28">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8 lg:py-28">
         <div className="animate-fade-in">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
             <Sparkles className="h-3.5 w-3.5 text-accent" />
-            For youth sports teams
+            Mobile-first · Built for the sideline
           </span>
           <h1 className="mt-5 font-display text-[clamp(2.5rem,5.5vw,4.25rem)] font-700 leading-[1.05] tracking-tight text-foreground">
             Finally know where{" "}
@@ -152,13 +152,14 @@ function Hero() {
             goes.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            TeamBudget gives parents, coaches, and treasurers real-time financial
-            transparency — so the only thing your team argues about is the lineup.
+            Track fees, receipts, and spending from your phone — at the diamond,
+            in the parking lot, or on the bus. TeamBudget gives parents, coaches,
+            and treasurers real-time financial transparency, anywhere.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button asChild size="lg" className="rounded-full px-6 text-base">
               <a href="#pricing">
-                Start free — no card required <ArrowRight className="h-4 w-4" />
+                Launch your team dashboard <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
             <Button
@@ -167,7 +168,7 @@ function Hero() {
               variant="outline"
               className="rounded-full px-6 text-base"
             >
-              <a href="#how">See live demo</a>
+              <a href="#how">Start your free pilot</a>
             </Button>
           </div>
           <div className="mt-8 flex items-center gap-3 text-sm text-muted-foreground">
