@@ -15,6 +15,7 @@ import {
   Users,
   Clock,
   Trophy,
+  MessageSquare,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -105,6 +106,13 @@ function Nav() {
                 {l.label}
               </a>
             ))}
+            <a
+              href="#"
+              onClick={() => setOpen(false)}
+              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+            >
+              Sign in
+            </a>
             <Button asChild className="mt-2 rounded-full">
               <a href="#pricing">Start free trial</a>
             </Button>
@@ -168,7 +176,7 @@ function Hero() {
               variant="outline"
               className="rounded-full px-6 text-base"
             >
-              <a href="#how">Start your free pilot</a>
+              <a href="#how">See how it works</a>
             </Button>
           </div>
           <div className="mt-8 flex items-center gap-3 text-sm text-muted-foreground">
@@ -329,7 +337,7 @@ function TrustStrip() {
     <section className="border-y border-border bg-card/50">
       <div className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-          Built for teams in
+          Trusted across leagues &amp; platforms
         </p>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
           {orgs.map((o) => (
@@ -370,7 +378,7 @@ function Problem() {
       body: "Treasurers burn nights reconciling Venmo, Zelle, cash, and crumpled receipts.",
     },
     {
-      icon: Users,
+      icon: MessageSquare,
       title: "Group-chat arguments",
       body: "Uniform costs and tournament fees turn into the season's longest text thread.",
     },
@@ -658,13 +666,13 @@ function Testimonials() {
         style={{ background: "var(--brand-mint-soft)" }}
       >
         <p className="font-display text-2xl font-700 text-foreground">
-          ↓ 87% parent finance questions
+          87% fewer parent finance questions
         </p>
         <p className="font-display text-2xl font-700 text-foreground">
-          ↑ 3.2× treasurer retention
+          3.2× higher treasurer retention
         </p>
         <p className="font-display text-2xl font-700 text-foreground">
-          ↓ 12 hrs admin / season
+          12 hrs saved per treasurer / season
         </p>
       </div>
     </section>
@@ -887,7 +895,7 @@ function FinalCTA() {
             href="#how"
             className="text-sm font-medium underline-offset-4 hover:underline opacity-90"
           >
-            Watch the 2-min demo →
+            See how it works →
           </a>
         </div>
         <p className="relative mt-6 flex items-center justify-center gap-2 text-xs opacity-80">
