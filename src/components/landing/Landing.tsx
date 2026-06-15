@@ -87,6 +87,7 @@ function Nav() {
         </div>
         <button
           aria-label="Toggle menu"
+          aria-expanded={open}
           className="md:hidden"
           onClick={() => setOpen((s) => !s)}
         >
@@ -142,7 +143,7 @@ function Hero() {
       style={{ backgroundImage: "var(--gradient-hero)" }}
     >
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8 lg:py-28">
-        <div className="animate-fade-in">
+        <div className="animate-in fade-in duration-700">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
             <Sparkles className="h-3.5 w-3.5 text-accent" />
             Mobile-first · Built for the sideline
@@ -200,7 +201,7 @@ function Hero() {
 
 function DashboardMockup() {
   return (
-    <div className="relative mx-auto flex w-full max-w-[340px] animate-fade-in items-center justify-center">
+    <div className="relative mx-auto flex w-full max-w-[340px] animate-in fade-in duration-700 items-center justify-center">
       {/* Phone frame */}
       <div
         className="relative rounded-[2.75rem] border border-border bg-[oklch(0.18_0.04_250)] p-3"
@@ -786,8 +787,8 @@ function Pricing() {
                 {t.features.map((f) => (
                   <li key={f} className="flex items-start gap-2">
                     <Check
-                      className={"mt-0.5 h-4 w-4 shrink-0 " + (t.highlighted ? "" : "")}
-                      style={t.highlighted ? { color: "var(--brand-mint)" } : { color: "var(--brand-mint)" }}
+                      className="mt-0.5 h-4 w-4 shrink-0"
+                      style={{ color: "var(--brand-mint)" }}
                     />
                     <span>{f}</span>
                   </li>
