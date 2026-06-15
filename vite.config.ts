@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Force Nitro on and hard-pin the Vercel preset so `vite build` emits a
+  // Build Output API bundle (.vercel/output) that Vercel can serve directly.
+  // Without this, self-deploy builds default to Cloudflare and Vercel 404s.
+  nitro: { preset: "vercel" },
 });
